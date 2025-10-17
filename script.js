@@ -63,9 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const imageURL = canvas.toDataURL('image/png');
             const downloadLink = document.createElement('a');
             downloadLink.href = imageURL;
-            downloadLink.download = `${ssid}network.png';
+            downloadLink.download = `${ssid}network.png`;
             downloadLink.click();
             downloadLink.remove(); // Clean up the temporary element
         });
 
 });
+
