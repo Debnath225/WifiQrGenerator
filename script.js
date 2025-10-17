@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const generateBtn = document.getElementById('generateBtn');
     const qrcodeContainer = document.getElementById('qrcode');
     const downloadBtn =document.getElementById('downloadbtn');
+    const ssid = document.getElementById('ssid').value.trim();
 
     // Initialize QRCode instance
     // The library will append a canvas element inside this container
@@ -18,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     generateBtn.addEventListener('click', generateQRCode);
 
     function generateQRCode() {
-        const ssid = document.getElementById('ssid').value.trim();
         const password = document.getElementById('password').value;
         const encryption = document.getElementById('encryption').value;
         const isHidden = document.getElementById('hidden').checked;
@@ -63,8 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const imageURL = canvas.toDataURL('image/png');
             const downloadLink = document.createElement('a');
             downloadLink.href = imageURL;
-            downloadLink.download = 'canvas_drawing.png';
+            downloadLink.download = `${ssid}network.png';
             downloadLink.click();
             downloadLink.remove(); // Clean up the temporary element
         });
+
 });
